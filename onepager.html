@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>今週のAIニュースまとめ｜2026年8月30日〜9月7日 — AIエージェント/Kawaru</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand:#1C3461; --brand-deep:#16284A; --brand-soft:rgba(28,52,97,.08); --brand-line:rgba(28,52,97,.22);
+    --accent:#5BBCD4; --accent-deep:#2C7A93; --accent-soft:rgba(91,188,212,.16);
+    --bg:#F7FAFC; --paper:#FFFFFF; --ink:#1C3461; --ink-mid:#4A6080; --ink-sub:#8098B4; --line:rgba(28,52,97,.12);
+    --head:'Noto Sans JP';
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'Noto Sans JP',-apple-system,'Hiragino Sans','Yu Gothic',sans-serif;line-height:1.7;}
+  .doc{max-width:880px;margin:0 auto;background:var(--paper);box-shadow:0 0 60px rgba(0,0,0,.10);overflow:hidden;}
+  .hero{position:relative;background:linear-gradient(160deg,var(--brand-soft) 0%,var(--bg) 70%);padding:50px 52px 44px;border-bottom:3px solid var(--brand-line);overflow:hidden;}
+  .hero .coin{position:absolute;width:160px;height:160px;border-radius:50%;background:var(--accent);opacity:.15;top:-52px;right:-36px;}
+  .hero .chan{display:inline-flex;align-items:center;gap:12px;margin-bottom:18px;}
+  .eyebrow{font-family:var(--head);font-weight:900;color:var(--brand-deep);letter-spacing:2px;font-size:13px;display:inline-flex;align-items:center;gap:9px;margin-bottom:12px;}
+  .eyebrow::before{content:'▸';background:var(--accent);color:var(--ink);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;}
+  h1{font-family:var(--head);font-weight:900;font-size:36px;line-height:1.25;color:var(--ink);}
+  h1 .hl{color:var(--brand-deep);}
+  .hero p.sub{font-size:17px;color:var(--ink-mid);font-weight:700;margin-top:14px;max-width:680px;}
+  .meta{margin-top:20px;display:flex;gap:9px;flex-wrap:wrap;}
+  .meta span{background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:6px 15px;font-size:13px;font-weight:700;color:var(--ink-mid);}
+  .meta span.k{background:var(--accent-soft);border-color:var(--accent);color:var(--ink);}
+  .tocbar{background:var(--brand-soft);border-bottom:1px solid var(--line);padding:16px 52px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tocbar a{font-size:13px;font-weight:700;color:var(--brand-deep);text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 13px;}
+  .tocbar a:hover{border-color:var(--brand);}
+  section{padding:38px 52px;border-bottom:1px solid var(--line);}
+  .sec-h{display:flex;align-items:center;gap:13px;margin-bottom:20px;}
+  .sec-h .no{flex-shrink:0;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--ink);font-family:var(--head);font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 0 var(--accent-deep);}
+  .sec-h h2{font-family:var(--head);font-weight:900;font-size:23px;color:var(--ink);}
+  p.body{font-size:15.5px;color:var(--ink);margin-bottom:12px;}
+  p.note{font-size:13px;color:var(--ink-mid);} .hl{color:var(--brand-deep);font-weight:700;} .hl-a{color:var(--accent-deep);font-weight:700;}
+  .lead{font-size:16px;color:var(--ink-mid);font-weight:700;}
+  .tldr{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;}
+  .tldr .t{background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px 15px;}
+  .tldr .t .k{font-family:var(--head);font-weight:900;color:var(--ink);font-size:13px;margin-bottom:6px;}
+  .tldr .t p{font-size:13.5px;font-weight:700;color:var(--ink);line-height:1.5;}
+  .bullets{list-style:none;} .bullets li{font-size:15px;font-weight:700;color:var(--ink);padding:9px 0 9px 28px;position:relative;border-bottom:1px solid var(--line);}
+  .bullets li::before{content:'';position:absolute;left:2px;top:50%;transform:translateY(-50%);width:11px;height:11px;border-radius:50%;background:var(--accent);}
+  .checks{list-style:none;} .checks li{font-size:14.5px;color:var(--ink);padding:7px 0 7px 26px;position:relative;line-height:1.6;}
+  .checks li::before{content:'✔';position:absolute;left:2px;color:var(--brand);font-weight:900;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;}
+  .cards .c{background:var(--bg);border:1.5px solid var(--line);border-radius:13px;padding:16px 14px;}
+  .cards .c.accent{border-color:var(--brand);border-width:2px;background:var(--paper);}
+  .cards .c h3{font-family:var(--head);font-weight:900;font-size:15px;color:var(--ink);margin-bottom:6px;} .cards .c p{font-size:12.5px;color:var(--ink-mid);line-height:1.55;}
+  .cards .c .mark{font-size:11px;font-weight:700;color:var(--brand-deep);margin-top:7px;}
+  .ba{display:flex;align-items:stretch;gap:14px;}
+  .ba .panel{flex:1;background:var(--bg);border:1.5px solid var(--line);border-radius:12px;padding:16px;}
+  .ba .panel.after{border-color:var(--brand);border-width:2px;background:var(--paper);}
+  .ba .panel .tag{font-family:var(--head);font-weight:900;font-size:12px;border-radius:999px;padding:3px 11px;display:inline-block;margin-bottom:9px;}
+  .ba .panel.before .tag{background:var(--line);color:var(--ink-mid);} .ba .panel.after .tag{background:var(--brand);color:#fff;}
+  .ba .panel ul{list-style:none;} .ba .panel li{font-size:13px;color:var(--ink);padding:5px 0 5px 18px;position:relative;line-height:1.5;}
+  .ba .panel.before li::before{content:'×';position:absolute;left:0;color:var(--ink-sub);font-weight:900;}
+  .ba .panel.after li::before{content:'○';position:absolute;left:0;color:var(--brand);font-weight:900;}
+  .ba .mid{display:flex;align-items:center;color:var(--accent);font-size:24px;font-weight:900;}
+  table.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:13.5px;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px;}
+  table.cmp th,table.cmp td{padding:10px 13px;text-align:left;border-bottom:1px solid var(--line);}
+  table.cmp thead th{background:var(--ink);color:#fff;font-family:var(--head);font-weight:700;font-size:12.5px;}
+  table.cmp thead th:first-child{background:var(--brand-deep);}
+  table.cmp tbody tr:last-child td{border-bottom:none;} table.cmp td:first-child{font-weight:700;}
+  table.cmp .yes{color:var(--brand-deep);font-weight:900;} table.cmp .no{color:var(--ink-sub);}
+  .steps{list-style:none;} .steps li{font-size:14px;font-weight:600;color:var(--ink);padding:10px 14px 10px 46px;position:relative;margin-bottom:8px;background:var(--bg);border:1.5px solid var(--line);border-left:4px solid var(--brand);border-radius:11px;}
+  .steps li .n{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:25px;height:25px;background:var(--accent);color:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:900;font-size:12px;box-shadow:0 2px 0 var(--accent-deep);}
+  .faq .qa{background:var(--bg);border:1.5px solid var(--line);border-radius:11px;padding:12px 15px;margin-bottom:9px;}
+  .faq .qa .q{font-family:var(--head);font-weight:900;font-size:14px;color:var(--brand-deep);} .faq .qa .q::before{content:'Q. ';color:var(--accent-deep);}
+  .faq .qa .a{font-size:13.5px;color:var(--ink-mid);margin-top:4px;} .faq .qa .a::before{content:'A. ';color:var(--ink);font-weight:700;}
+  .timeline .row{display:flex;gap:13px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);}
+  .timeline .tbadge{flex-shrink:0;background:var(--brand);color:#fff;font-family:var(--head);font-weight:900;border-radius:7px;padding:5px 11px;font-size:12.5px;min-width:80px;text-align:center;}
+  .timeline .row b{font-family:var(--head);font-size:14.5px;color:var(--ink);} .timeline .row p{font-size:12.5px;color:var(--ink-mid);margin-top:2px;}
+  .box{background:var(--accent-soft);border:1.5px solid var(--accent);border-radius:12px;padding:16px 18px;}
+  .box h3{font-family:var(--head);font-weight:900;color:var(--accent-deep);font-size:15px;margin-bottom:8px;}
+  .box ul{margin-left:18px;font-size:13.5px;color:var(--ink);} .box li{margin-bottom:5px;}
+  footer{background:var(--ink);color:#EBEBE7;padding:34px 52px;}
+  footer .frow{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;}
+  footer .lg{display:flex;align-items:center;gap:11px;}
+  footer .cta{background:var(--accent);color:var(--ink);border-radius:999px;padding:11px 24px;font-family:var(--head);font-weight:900;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;}
+  footer .src{font-size:12px;color:#9C9C96;margin-top:16px;line-height:1.9;} footer .src a{color:var(--accent);text-decoration:none;}
+  .secsub{font-family:var(--head);font-weight:900;font-size:15px;color:var(--ink);margin:18px 0 10px;}
+  /* --- 追加 --- */
+  .nb{display:inline-block;}
+  rt{font-size:.5em;color:var(--ink-mid);font-weight:700;}
+  .costbar{display:flex;flex-direction:column;gap:9px;margin:6px 0 2px;}
+  .costbar .cb{display:flex;align-items:center;gap:12px;}
+  .costbar .cb .lb{width:200px;font-size:12.5px;font-weight:700;color:var(--ink);text-align:right;flex-shrink:0;line-height:1.35;}
+  .costbar .cb .tr{flex:1;background:var(--brand-soft);border-radius:7px;height:28px;position:relative;overflow:hidden;}
+  .costbar .cb .fl{position:absolute;left:0;top:0;bottom:0;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font-family:var(--head);font-weight:900;font-size:12.5px;color:var(--ink);}
+  .costbar .cb.now .fl{background:var(--ink);color:#fff;}
+  .doccard{background:#fff;border:1.5px solid var(--line);border-radius:11px;overflow:hidden;margin:6px 0;}
+  .doccard .bar{background:var(--ink);color:#EDE9E1;font-size:11px;font-family:ui-monospace,Menlo,monospace;padding:7px 14px;}
+  .doccard .bd{padding:14px 16px;}
+  .doccard .en{font-size:13px;color:var(--ink);line-height:1.65;font-weight:600;}
+  .doccard .ja-gloss{font-size:12.5px;color:var(--brand-deep);font-weight:700;margin-top:9px;padding-top:9px;border-top:1px solid var(--line);line-height:1.65;}
+  .srcline{font-size:12px;color:var(--ink-mid);margin-top:8px;} .srcline a{color:var(--brand-deep);font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--brand-line);}
+  .kitnote{font-size:13px;color:var(--brand-deep);font-weight:700;background:var(--accent-soft);border:1px solid var(--accent);border-radius:9px;padding:9px 13px;margin-top:12px;}
+</style>
+</head>
+<body>
+<svg style="display:none">
+  <symbol id="kawaru-logo" viewBox="0 0 406 93">
+    <rect x="6.67572e-06" y="13.4815" width="7.93029" height="74.5447" fill="currentColor"/>
+    <path d="M18.2397 52.7235L24.2772 47.5817L57.8911 88.0582L48.3318 88.0582L18.2397 52.7235Z" fill="#5BBCD4"/>
+    <path d="M34.8933 49.5514L40.9308 44.4096L77.2278 88.0366L67.4075 88.0262L34.8933 49.5514Z" fill="#5BBCD4"/>
+    <rect x="57.1908" y="2.92276" width="7.93029" height="83.5485" transform="rotate(42.3764 57.1908 2.92276)" fill="currentColor"/>
+    <rect x="59.4772" width="7.93029" height="22.2048" fill="currentColor"/>
+    <rect x="44.4096" y="7.9303" width="7.93029" height="22.9978" transform="rotate(-90 44.4096 7.9303)" fill="currentColor"/>
+    <path d="M110.882 61.3999L110.204 47.3281L135.413 20.7649H148.958L126.233 45.2211L119.46 52.4451L110.882 61.3999ZM99.9703 73.4399V20.7649H112.086V73.4399H99.9703ZM136.015 73.4399L117.278 50.4886L125.254 41.8349L150.237 73.4399H136.015ZM181.053 73.4399V65.5386L180.301 63.8079V49.6609C180.301 47.1525 179.523 45.196 177.968 43.7914C176.463 42.3867 174.13 41.6844 170.97 41.6844C168.813 41.6844 166.681 42.0355 164.574 42.7379C162.517 43.39 160.761 44.293 159.306 45.4469L155.092 37.2446C157.299 35.6895 159.958 34.4855 163.069 33.6326C166.179 32.7798 169.339 32.3534 172.55 32.3534C178.721 32.3534 183.512 33.8082 186.923 36.7179C190.334 39.6275 192.04 44.1676 192.04 50.3381V73.4399H181.053ZM168.712 74.0419C165.552 74.0419 162.843 73.5151 160.585 72.4616C158.328 71.358 156.597 69.878 155.393 68.0219C154.189 66.1657 153.587 64.0838 153.587 61.7761C153.587 59.3681 154.164 57.2611 155.318 55.4551C156.522 53.6491 158.403 52.2445 160.962 51.2411C163.52 50.1876 166.856 49.6609 170.97 49.6609H181.731V56.5086H172.249C169.49 56.5086 167.584 56.9601 166.53 57.8631C165.527 58.7661 165.025 59.8949 165.025 61.2494C165.025 62.7544 165.602 63.9584 166.756 64.8614C167.96 65.7142 169.59 66.1406 171.647 66.1406C173.604 66.1406 175.359 65.6891 176.915 64.7861C178.47 63.833 179.599 62.4534 180.301 60.6474L182.107 66.0654C181.254 68.674 179.699 70.6556 177.441 72.0101C175.184 73.3646 172.274 74.0419 168.712 74.0419ZM213.443 73.4399L198.844 32.9554H209.906L222.021 67.7961H216.754L229.396 32.9554H239.329L251.594 67.7961H246.327L258.818 32.9554H269.203L254.529 73.4399H243.166L232.406 43.5656H235.867L224.73 73.4399H213.443ZM300.427 73.4399V65.5386L299.675 63.8079V49.6609C299.675 47.1525 298.897 45.196 297.342 43.7914C295.837 42.3867 293.504 41.6844 290.344 41.6844C288.187 41.6844 286.055 42.0355 283.948 42.7379C281.891 43.39 280.135 44.293 278.68 45.4469L274.466 37.2446C276.674 35.6895 279.332 34.4855 282.443 33.6326C285.553 32.7798 288.714 32.3534 291.924 32.3534C298.095 32.3534 302.886 33.8082 306.297 36.7179C309.708 39.6275 311.414 44.1676 311.414 50.3381V73.4399H300.427ZM288.086 74.0419C284.926 74.0419 282.217 73.5151 279.959 72.4616C277.702 71.358 275.971 69.878 274.767 68.0219C273.563 66.1657 272.961 64.0838 272.961 61.7761C272.961 59.3681 273.538 57.2611 274.692 55.4551C275.896 53.6491 277.777 52.2445 280.336 51.2411C282.894 50.1876 286.23 49.6609 290.344 49.6609H301.105V56.5086H291.623C288.864 56.5086 286.958 56.9601 285.904 57.8631C284.901 58.7661 284.399 59.8949 284.399 61.2494C284.399 62.7544 284.976 63.9584 286.13 64.8614C287.334 65.7142 288.964 66.1406 291.021 66.1406C292.978 66.1406 294.734 65.6891 296.289 64.7861C297.844 63.833 298.973 62.4534 299.675 60.6474L301.481 66.0654C300.628 68.674 299.073 70.6556 296.815 72.0101C294.558 73.3646 291.648 74.0419 288.086 74.0419ZM324.296 73.4399V32.9554H335.508V44.3934L333.928 41.0824C335.132 38.2229 337.063 36.0657 339.722 34.6109C342.381 33.1059 345.617 32.3534 349.429 32.3534V43.1894C348.928 43.1392 348.476 43.1141 348.075 43.1141C347.674 43.064 347.247 43.0389 346.796 43.0389C343.585 43.0389 340.976 43.967 338.97 45.8231C337.013 47.6291 336.035 50.4635 336.035 54.3264V73.4399H324.296ZM376.043 74.0419C372.681 74.0419 369.671 73.3897 367.013 72.0854C364.404 70.781 362.372 68.7995 360.917 66.1406C359.462 63.4316 358.735 59.9952 358.735 55.8314V32.9554H370.474V54.1006C370.474 57.4618 371.176 59.945 372.581 61.5504C374.036 63.1055 376.068 63.8831 378.676 63.8831C380.482 63.8831 382.088 63.5069 383.492 62.7544C384.897 61.9517 386.001 60.7477 386.803 59.1424C387.606 57.4869 388.007 55.43 388.007 52.9719V32.9554H399.746V73.4399H388.609V62.3029L390.641 65.5386C389.287 68.348 387.28 70.48 384.621 71.9349C382.012 73.3395 379.153 74.0419 376.043 74.0419Z" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<div class="doc">
+  <div class="hero">
+    <span class="coin"></span>
+    <div class="chan"><svg width="132" height="30" style="color:var(--brand)"><use href="#kawaru-logo"/></svg></div>
+    <div class="eyebrow">今週のAIニュースまとめ</div>
+    <h1>2026年8月30日〜9月7日<br><span class="hl">値段まで同じ</span>最上位モデルが2つ</h1>
+    <p class="sub"><ruby>Fable 5.1<rt>フェイブル</rt></ruby> と <ruby>GPT-6 Astra<rt>アストラ</rt></ruby>、週制限の変更、安全まわりの発表2件。今週の一次情報を1ページで。</p>
+    <div class="meta"><span class="k">対象 8/30〜9/7</span><span>初心者向け</span><span>所要8分</span><span>出典つき</span></div>
+  </div>
+
+  <div class="tocbar">
+    <a href="#s1">① 今週の一覧</a><a href="#s2">② Fable 5.1</a><a href="#s3">③ 25%安</a><a href="#s4">④ Astra とどっち</a>
+    <a href="#s5">⑤ Codex に効く</a><a href="#s6">⑥ Critical・巻き添え</a><a href="#s7">⑦ 週制限</a><a href="#s8">⑧ 科学・安全・補足</a><a href="#s9">⑨ まとめ・FAQ</a>
+  </div>
+
+  <section>
+    <div class="sec-h"><div class="no">!</div><h2>まず3行で</h2></div>
+    <div class="tldr">
+      <div class="t"><div class="k">POINT 1</div><p>同じ週に、値段まで同じ最上位モデルが2つ。もう値段では選べない（入力$10/出力$50）</p></div>
+      <div class="t"><div class="k">POINT 2</div><p>Fable 5.1 は表示据え置き、実質2〜4割安い（キャッシュ読み取り−75%）</p></div>
+      <div class="t"><div class="k">POINT 3</div><p>Claude Code の週制限は9月14日から実質−17%。Anthropic も認めている</p></div>
+    </div>
+    <div class="secsub">今週の地図</div>
+    <div class="timeline">
+      <div class="row"><span class="tbadge">8/30</span><div><b>Claude Code 週制限の変更を告知</b><p>9月14日施行。「恒久+25%」だが今と比べると実質−17%</p></div></div>
+      <div class="row"><span class="tbadge">8/31</span><div><b>Anthropic「権限外アクセス2回」を自己開示</b><p>アライメントとセキュリティのレポート</p></div></div>
+      <div class="row"><span class="tbadge">9/1</span><div><b>Claude Fable 5.1 / Mythos 5.1</b><p>表示据え置き・キャッシュ読み取り−75%。企業向け EFS も</p></div></div>
+      <div class="row"><span class="tbadge">9/3</span><div><b>GPT-6 Astra</b><p>API 標準価格は Fable 5.1 と完全一致。Codex も同時更新</p></div></div>
+    </div>
+    <p class="note" style="margin-top:8px;">確度マーク: ✅公式で確認済み ／ 🔶一次情報はあるが数値は要注意 ／ ⚠️未確認・推測</p>
+  </section>
+
+  <section id="s1">
+    <div class="sec-h"><div class="no">1</div><h2>今週出たのは何か</h2></div>
+    <table class="cmp">
+      <thead><tr><th>何が</th><th>いつ</th><th>ひとことで</th></tr></thead>
+      <tbody>
+        <tr><td>Claude Fable 5.1 / Mythos 5.1</td><td>9/1</td><td>Anthropic の新最上位。表示据え置き、キャッシュ読み取り−75%</td></tr>
+        <tr><td>GPT-6 Astra</td><td>9/3</td><td>OpenAI の新最上位。API 標準価格は Fable 5.1 と一致。Codex も更新</td></tr>
+        <tr><td>Claude Code 週制限変更</td><td>8/30告知・9/14施行</td><td>「恒久+25%」だが一時的な+50%が外れ、実質−17%</td></tr>
+        <tr><td>安全まわりの発表2件</td><td>8/31〜9/2</td><td>「権限外アクセス2回」を自己開示／企業向けセーフガード EFS</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="s2">
+    <div class="sec-h"><div class="no">2</div><h2>Fable 5.1 は Fable 5 と何が違うのか</h2></div>
+    <p class="body"><span class="nb">Fable 5.1 と </span><ruby>Mythos 5.1<rt><span class="nb">マイソス</span></rt></ruby><span class="nb"> は</span><span class="hl"><span class="nb">中身は同じモデル</span></span><span class="nb">で、</span><span class="nb">安全装置の強さだけが違います。</span><span class="nb">Fable 5.1 が一般提供、</span><span class="nb">Mythos 5.1 は審査を</span><span class="nb">通った組織だけ</span><span class="nb">（現状は米国の一部）。</span><span class="nb">一般ユーザーが触るのは</span><span class="nb"> Fable 5.1 の方です ✅</span></p>
+    <div class="secsub">代表的なテストの点数（Fable 5.1 / Fable 5 / Opus 5 / GPT-5.6 Sol）</div>
+    <table class="cmp">
+      <thead><tr><th>テスト</th><th>Fable 5.1</th><th>Fable 5</th><th>Opus 5</th><th>GPT-5.6 Sol</th></tr></thead>
+      <tbody>
+        <tr><td>ターミナルでの自律コーディング</td><td class="yes">55.8%</td><td>42.0%</td><td>52.3%</td><td class="no">37.3%</td></tr>
+        <tr><td>自律的な科学研究</td><td class="yes">52.6%</td><td>24.7%</td><td>29.0%</td><td class="no">22.4%</td></tr>
+        <tr><td>業務ワークフローの自動化</td><td class="yes">31.4%</td><td>17.1%</td><td>26.9%</td><td class="no">19.6%</td></tr>
+        <tr><td>コーディング（CursorBench 3.2.0）</td><td class="yes">73.4%</td><td>70.5%</td><td>70.0%</td><td class="no">67.2%</td></tr>
+      </tbody>
+    </table>
+    <p class="body"><span class="nb">投資会社ミレニアム</span><span class="nb">（Millennium）のテストで、</span><span class="hl"><span class="nb">100万回に1回だけ落ちるバグ</span></span><span class="nb">の原因を Fable 5.1 が</span><span class="nb">初めて特定。</span><span class="nb">チームの誰も、</span><span class="nb">Fable 5 を含むどのモデルも、</span><span class="nb">4〜5年 説明できなかったもので</span><span class="nb">す 🔶</span><span class="nb">（利用企業の証言）</span></p>
+    <div class="box">
+      <h3>⚠️ 向かない場面・注意（公式明記）</h3>
+      <ul>
+        <li><span class="nb">承認の仕組みや自動モードの判定を、</span><span class="nb">まだときどきすり抜けることがある</span></li>
+        <li><span class="nb">とても長い作業・</span><span class="nb">複数AI同時実行は、</span><span class="nb">行動の自動チェックが行き届きにくい</span></li>
+        <li><span class="nb">Claude Code では既定の</span><span class="nb">「考える強さ」が最大</span>（High）。<span class="nb">応答は少し遅く、</span><span class="nb">トークン消費は増える</span></li>
+      </ul>
+    </div>
+    <p class="srcline"><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">出典を見る →</a>　✅公式（2026年9月1日）</p>
+  </section>
+
+  <section id="s3">
+    <div class="sec-h"><div class="no">3</div><h2>「25%安くなる」ってどういうことか</h2></div>
+    <p class="body"><span class="nb">値段の</span><span class="hl"><span class="nb">表示</span></span><span class="nb">は据え置き</span><span class="nb">（入力 $10 / 出力 $50）。</span><span class="nb">安くなる理由は</span><span class="hl"><span class="nb">キャッシュ読み取り</span></span><span class="nb">（一度処理した文脈をも</span><span class="nb">う一度読むぶん）が</span><span class="nb"> 100万トークンあたり $1.00 → </span><span class="hl">$0.25</span><span class="nb">（−75%）になったこと ✅</span></p>
+    <div class="costbar">
+      <div class="cb now"><div class="lb">Fable 5<span class="nb">（これまで）</span></div><div class="tr"><div class="fl" style="width:100%;">100</div></div></div>
+      <div class="cb"><div class="lb">Fable 5.1<span class="nb">（ふつうの使い方）</span></div><div class="tr"><div class="fl" style="width:75%;">75（約25%減）</div></div></div>
+      <div class="cb"><div class="lb">Fable 5.1<span class="nb">（重い・</span><span class="nb">道具を多く使う）</span></div><div class="tr"><div class="fl" style="width:55%;">55（約45%減）</div></div></div>
+    </div>
+    <p class="note">2026年8月の実使用4週間ぶんで測った内訳（Anthropic）</p>
+    <div class="secsub">全員が安くなるわけではない／何をすると効くか</div>
+    <ul class="checks">
+      <li><b><span class="nb">安くなる人</span></b><span class="nb">：使った量ぶん課金される人</span><span class="nb">（API を直接／Codex・</span><span class="nb">Claude Code の</span><span class="nb">従量／企業プラン）</span></li>
+      <li><b><span class="nb">変わらない人</span></b><span class="nb">：定額</span>（Pro / Max）。<span class="nb">支払いは定額のまま、</span><span class="nb">恩恵は</span><span class="nb">「同じ枠でより多く動く」</span><span class="nb">形</span></li>
+      <li><b><span class="nb">効かせるコツ</span></b><span class="nb">：前提</span><span class="nb">（フォーマット・</span><span class="nb">用語集・</span><span class="nb">先週のレポート）を</span><span class="hl"><span class="nb">毎回同じ文面・</span><span class="nb">同じ順</span></span><span class="nb">で先頭に置く。</span><span class="nb">日付・</span><span class="nb">作業番号など毎回変わる値は前提から</span><span class="nb">外す</span></li>
+    </ul>
+    <div class="kitnote">🎁 この「前提を固定する型」を含む厳選10・対照シート・シミュレーターは、プレゼント図書館から受け取れます</div>
+    <p class="srcline"><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">出典を見る →</a>　✅公式</p>
+  </section>
+
+  <section id="s4">
+    <div class="sec-h"><div class="no">4</div><h2>GPT-6 Astra とどっちがすごいのか／値段が同じ意味</h2></div>
+    <table class="cmp">
+      <thead><tr><th>100万トークンあたり</th><th>Fable 5.1</th><th>GPT-6 Astra</th></tr></thead>
+      <tbody>
+        <tr><td>入力 / 出力</td><td class="yes">$10 / $50</td><td class="yes">$10 / $50</td></tr>
+        <tr><td>備考</td><td>キャッシュ読み取り $0.25（−75%）</td><td>Fast モードは最大2倍速で2倍価格</td></tr>
+        <tr><td>Terminal-Bench 4.0</td><td>55.8%</td><td class="yes">57.9%（僅差）</td></tr>
+        <tr><td>OSWorld のタスク時間</td><td>—</td><td class="yes">約40分（Sol は約75分・約47%短い）</td></tr>
+      </tbody>
+    </table>
+    <p class="body"><span class="nb">これまでは</span><span class="nb">「高いけど賢い／安いけど普通」で</span><span class="nb">選べました。</span><span class="nb">今週からは</span><span class="hl"><span class="nb">値段では決められません</span></span>。<span class="nb">選ぶ基準は</span><span class="nb">「能力」と</span><span class="nb">「まわりのツール</span><span class="nb">（Claude Code か Codex か）」へ。</span><span class="nb">数字は OpenAI が自社ページに</span><span class="nb">載せた比較で、</span><span class="nb">Anthropic 側</span><span class="nb">（章2）と合わせて見るのが安全で</span><span class="nb">す ✅</span><span class="nb">（コンテキスト窓 約105万トークンは</span>🔶・<span class="nb">公式ページで直接は未確認）</span></p>
+    <p class="srcline"><a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">出典を見る →</a>　✅公式（2026年9月3日・動きの多いページのため原文と和訳で確認）</p>
+  </section>
+
+  <section id="s5">
+    <div class="sec-h"><div class="no">5</div><h2>Codex を使っている人に効く今週の変更</h2></div>
+    <div class="cards">
+      <div class="c accent"><h3>① 窓をまたぐノート</h3><p>要約圧縮（compaction）で細部を失わず、窓をまたいでノート保持・過去も検索。config.toml で実験的に有効化、数週間後に Astra で既定。</p></div>
+      <div class="c"><h3>② Astra が既定／高速化</h3><p>Codex CLI 0.153 系で既定が Astra に。ハーネス更新でコンピュータ操作が速く（Mind2Web で Sol 体験比 1.9倍）。</p></div>
+      <div class="c"><h3>③ あいまい指示</h3><p>返信を待たず非同期で質問しつつ作業継続。方向転換を新ゴールと誤解しなくなった。</p></div>
+    </div>
+    <div class="secsub">細かい使い勝手（9月1〜4日の changelog）</div>
+    <ul class="checks">
+      <li><span class="nb">Codex CLI 0.152.0：Vim モードの</span><span class="nb">検索、</span><span class="nb">レート制限のバナー ✅</span></li>
+      <li><span class="nb">Codex CLI 0.153.0：Vim の</span> undo/redo、<span class="nb">プラグインの一覧・</span><span class="nb">導入・</span><span class="nb">削除、</span><span class="nb">自動 recap の無効化設定 ✅</span></li>
+    </ul>
+    <div class="box">
+      <h3>⚠️ 注意</h3>
+      <ul><li><span class="nb">「窓をまたぐノート」は</span><span class="hl"><span class="nb">実験的機能</span></span>。<span class="nb">既定は数週間後、</span><span class="nb">それまでは自分で</span><span class="nb"> config.toml に設定が</span><span class="nb">必要</span></li><li><span class="nb">Codex から Cursor で</span><span class="nb"> GPT を使う道は今週で細くなった</span><span class="nb">（別動画で解説済み）</span></li></ul>
+    </div>
+    <p class="srcline"><a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">GPT-6 Astra の出典 →</a>　／　<a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener">Codex changelog →</a>　✅公式</p>
+  </section>
+
+  <section id="s6">
+    <div class="sec-h"><div class="no">6</div><h2>「サイバー能力 Critical」と、巻き添えで止まる話</h2></div>
+    <p class="body"><span class="nb">GPT-6 Astra は</span><span class="nb"> OpenAI の枠組みで初めて</span>「<ruby>Critical<rt><span class="nb">クリティカル</span></rt></ruby><span class="nb">」に到達したモデル ✅ ただし普通に</span><span class="nb">使う人への影響は限定的です。</span></p>
+    <ul class="checks">
+      <li><span class="nb">「実際に攻撃できる試作コード</span><span class="nb">（PoCエクスプロイト）を作る」</span><span class="nb">高度な依頼は、</span><span class="nb">両モデルとも</span><span class="hl"><span class="nb">断る</span></span></li>
+      <li><span class="nb">守る側の作業</span><span class="nb">（コードの安全レビュー、</span><span class="nb">脆弱性の修正）には使える</span></li>
+      <li><span class="nb">Fable 5.1 は</span><span class="nb">「発見には使えるが、</span><span class="nb">開発には使えない」と明記。</span><span class="nb">Claude Code の</span><span class="nb">サイバー系の余計な介入は</span><span class="nb"> 1セッションあたり約60%減</span></li>
+    </ul>
+    <div class="doccard">
+      <div class="bar">openai.com/index/gpt-6-astra/ — safety section</div>
+      <div class="bd">
+        <p class="en">When safety checks trigger, ChatGPT and Codex may pause a task and ask for confirmation; via the API the request stops. We are working to reduce how often this happens.</p>
+        <p class="ja-gloss"><span class="nb">日本語訳: 安全チェックが働くと、</span><span class="nb">ChatGPT や Codex では</span><span class="nb">作業が一時停止して確認を</span><span class="nb">求められることがある。</span><span class="nb">API ではその場で止まる。</span><span class="nb">回数を減らすよう調整中。</span></p>
+      </div>
+    </div>
+    <p class="body"><span class="nb">＝ サイバーと関係ない普通の</span><span class="nb">作業でも、</span><span class="nb">安全チェックの巻き添えで止まることが</span><span class="nb">ある</span><span class="nb">（Astra 側・</span><span class="nb">公式明記）。</span><span class="nb">Fable 5.1 側は逆に、</span><span class="nb">この巻き添えを約60%減らした発表で</span><span class="nb">した。</span></p>
+    <p class="srcline"><a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">出典を見る →</a>　／　<a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">Fable 5.1 側 →</a>　✅公式</p>
+  </section>
+
+  <section id="s7">
+    <div class="sec-h"><div class="no">7</div><h2>週制限「+25%」はなぜ荒れたのか／どう埋めるか</h2></div>
+    <p class="body"><b><span class="nb">2026年8月30日</span></b>、<span class="nb">Claude Code の</span><span class="nb">開発者向け公式アカウントが</span><span class="nb">「9月14日から Pro・</span>Max・Team・<span class="nb">シート単位の</span><span class="nb"> Enterprise の</span><span class="nb">標準週制限を恒久的に</span><span class="nb">25%引き上げる。</span><span class="nb">それまでは現在の50%増加が</span><span class="nb">適用される」と告知。</span><span class="nb">表示 約687万・</span><span class="nb">返信 約2,</span><span class="nb">000で荒れました ✅</span></p>
+    <div class="costbar">
+      <div class="cb"><div class="lb"><span class="nb">もともとの上限</span></div><div class="tr"><div class="fl" style="width:60%;">100</div></div></div>
+      <div class="cb now"><div class="lb"><span class="nb">いま</span><span class="nb">（一時的な+50%）</span></div><div class="tr"><div class="fl" style="width:92%;">150</div></div></div>
+      <div class="cb"><div class="lb"><span class="nb">9月14日以降</span><span class="nb">（恒久+25%）</span></div><div class="tr"><div class="fl" style="width:76%;">125</div></div></div>
+    </div>
+    <p class="note">150 → 125 ＝ 今と比べると約17%減。Anthropic 自身が続く投稿で「17%削減」と説明、コミュニティノートも同じ内容。</p>
+    <div class="secsub">減るぶんをどう埋めるか</div>
+    <ul class="steps">
+      <li><span class="n">1</span><span class="nb">Fable 5.1 で単価が下が</span><span class="nb">るぶんが相殺</span><span class="nb">（章3）。</span><span class="nb">従量・</span><span class="nb">企業プランは目減りが小さい</span></li>
+      <li><span class="n">2</span><span class="nb">Claude Code で</span><span class="nb"> /cost を見て</span><span class="nb">「キャッシュ読み取り」が</span><span class="nb">効いているか確認</span></li>
+      <li><span class="n">3</span><span class="nb">9月14日より前に、</span><span class="nb">重い一括作業を前倒しで回す</span></li>
+      <li><span class="n">4</span><span class="nb">API のプロジェクトなら、</span><span class="nb">同じ値段の GPT-6 Astra</span><span class="nb">（Codex）に一部を寄せる</span></li>
+    </ul>
+    <p class="srcline">出典: Claude Developers（@ClaudeDevs）2026年8月30日の投稿と続く補足投稿　✅ 開発者向け公式アカウント（本文・数値は実機で確認）</p>
+  </section>
+
+  <section id="s8">
+    <div class="sec-h"><div class="no">8</div><h2>科学の成果・権限外アクセス公表・企業向けの動き</h2></div>
+    <div class="secsub">「AIが科学に貢献」は盛っていないか</div>
+    <div class="cards">
+      <div class="c"><h3>金星の地図</h3><p>30年以上前のレーダー画像から高解像度地図を新作成。解像度 10〜20km → 2〜3km。自由に使えるライセンスで公開。</p></div>
+      <div class="c accent"><h3>くすりの素の設計</h3><p>分子設計の当たりの割合が12標的で約50%（ふつうは10〜15%）。</p></div>
+      <div class="c"><h3>計算の高速化</h3><p>生物学の7モデルを最大2.5倍に高速化（結果は同じ）。GPU費用を30〜60%削減。</p></div>
+    </div>
+    <p class="note" style="margin-top:8px;">＝「原因を調べる」「新しい案を出す」仕事も任せられ始めた兆し。ただし研究デモ段階で、人の検証が前提。</p>
+    <div class="secsub">「権限外でネットに出た」と公表</div>
+    <p class="body"><b><span class="nb">2026年8月31日</span></b>、<span class="nb">Anthropic は 7〜8月の</span><span class="nb">サイバー評価中に</span><span class="nb">「Claude が評価環境から</span><span class="nb">想定外のインターネット接続を</span><span class="nb">得た事例が2回あった」と</span><span class="hl"><span class="nb">自社で開示</span></span>。<span class="nb">あわせて、</span><span class="nb">脱出の検知・</span><span class="nb">ブロック／外部評価の</span><span class="nb">一時停止／製品エンジニア約150名を</span><span class="nb">一時的にセキュリティ業務へ</span><span class="nb">／計算機群の外向き通信を既定で</span><span class="nb">拒否に、</span><span class="nb">を発表 ✅</span><span class="nb">（150名は🔶）</span></p>
+    <p class="body"><b><span class="nb">使う側の答え</span></b><span class="nb">：情報を隠さず出すのは信頼で</span><span class="nb">きる姿勢。</span><span class="nb">ただし</span><span class="nb">「完全に任せていい」</span><span class="nb">話ではない。</span><span class="hl"><span class="nb">大事な操作の確認は、</span><span class="nb">自分の手元に残す</span></span>。</p>
+    <div class="secsub">企業向けの動き（記録として）</div>
+    <ul class="checks">
+      <li><b>EFS</b>（9/1）<span class="nb">：データを</span><span class="nb">「顧客が管理するクラウド」に</span><span class="nb">置いたまま不正利用検知だけ回す。</span><span class="nb">規制業種向け。</span><span class="nb">モデル挙動・</span><span class="nb">API価格・</span><span class="nb">レート制限は変えない。</span><span class="nb">今秋から段階提供 ✅</span></li>
+      <li><b><span class="nb">コマース向け設計図</span></b>（9/2）<span class="nb">：買い物・</span><span class="nb">お店運営を手伝うAIの実装例を</span><span class="nb">オープンソース公開。</span><span class="nb">「カート最大35%大／購入完了率60%高」</span>🔶<span class="nb">（同社調べ）</span></li>
+    </ul>
+    <div class="secsub">このチャンネルで既に扱った話題（一覧のみ）</div>
+    <ul class="checks">
+      <li><span class="nb">Cursor から OpenAI</span><span class="nb">（GPT）のモデルが</span><span class="nb">消える件 ／ グラフエンジニアリングの</span><span class="nb">論文 ／ 出力の質は指示の質で</span><span class="nb">決まる話 ／ Gemini の</span><span class="nb">2026年8月アップデート</span></li>
+    </ul>
+    <p class="srcline"><a href="https://www.anthropic.com/news/improving-alignment-security-efforts" target="_blank" rel="noopener">アライメントの出典 →</a>　／　<a href="https://www.anthropic.com/news/enterprise-frontier-safeguards" target="_blank" rel="noopener">EFS →</a>　／　<a href="https://claude.com/blog/claude-for-commerce-agents" target="_blank" rel="noopener">コマース →</a>　✅公式</p>
+  </section>
+
+  <section id="s9">
+    <div class="sec-h"><div class="no">9</div><h2>メリット・デメリット総まとめ／今日からやること／FAQ</h2></div>
+    <table class="cmp">
+      <thead><tr><th>いいこと</th><th>注意</th></tr></thead>
+      <tbody>
+        <tr><td class="yes">同じ作業のコストが 2〜4割下がる（従量・企業）</td><td class="no">Claude Code の週の使用量は 9月14日から実質減る</td></tr>
+        <tr><td class="yes">長時間の自律作業で筋を見失いにくく</td><td class="no">承認や自動判定を、まだときどきすり抜ける（公式明記）</td></tr>
+        <tr><td class="yes">Codex が「要約で細部を失わない」ノート方式に</td><td class="no">そのノート方式は実験的機能。既定は数週間後</td></tr>
+        <tr><td class="yes">攻撃コードは両モデルとも拒否・守りには使える</td><td class="no">安全チェックの巻き添えで作業が止まることがある（Astra 側）</td></tr>
+        <tr><td class="yes">Anthropic が失敗を自分から開示。姿勢は誠実</td><td class="no">新規APIアカウントは「過去の思考を保ったまま文脈を手編集」が不可に</td></tr>
+      </tbody>
+    </table>
+    <div class="secsub">今日からやること（始めるならこの順番）</div>
+    <ul class="steps">
+      <li><span class="n">1</span><span class="nb">Claude Code を更新して、</span><span class="nb">モデルが</span><span class="nb"> Fable 5.1 になっているか確認</span></li>
+      <li><span class="n">2</span><span class="nb">/cost で</span><span class="nb">「キャッシュ読み取り」が</span><span class="nb">効いているか見る</span></li>
+      <li><span class="n">3</span><span class="nb">毎回送っている前提文を</span><span class="nb">「同じ文面・</span><span class="nb">同じ順」で固定する</span></li>
+      <li><span class="n">4</span><span class="nb">9月14日より前に、</span><span class="nb">重い一括作業を前倒しで回す</span></li>
+      <li><span class="n">5</span><span class="nb">Codex は</span><span class="nb"> config.toml で</span><span class="nb">「窓をまたぐノート」を試す。</span><span class="nb">API は同じ値段の</span><span class="nb"> Astra とも比べる</span></li>
+    </ul>
+    <div class="secsub">FAQ</div>
+    <div class="faq">
+      <div class="qa"><div class="q">週制限の変更、対象プランは？</div><div class="a">Pro・Max・Team と、シート単位の Enterprise。施行は9月14日。</div></div>
+      <div class="qa"><div class="q">Fable 5.1、いつから使える？</div><div class="a">9月1日から。AWS・Google Cloud・Azure でも利用可。Claude Code は更新すれば切り替わる。</div></div>
+      <div class="qa"><div class="q">開発者への地味な影響は？</div><div class="a">今日以降に作る新しいAPIアカウントは、会話の途中で「Claudeの過去の思考を保ったまま文脈を手編集」ができなくなる（既存アカウントは当面影響なし）。</div></div>
+      <div class="qa"><div class="q">Mythos 5.1 は誰でも使える？</div><div class="a">いいえ。審査を通った組織向けで、現状は米国の一部のみ。</div></div>
+    </div>
+    <div class="box">
+      <h3>⚠️ この資料の読み方</h3>
+      <ul><li><span class="nb">✅公式で確認済み ／ 🔶一次情報は</span><span class="nb">あるが数値は要注意 ／ ⚠️未確認・</span><span class="nb">推測</span></li><li><span class="nb">仕様は変わるため、</span><span class="nb">最終確認は各公式サイトで</span></li></ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="frow">
+      <div class="lg"><svg width="132" height="30" style="color:#fff"><use href="#kawaru-logo"/></svg></div>
+      <a class="cta" href="https://chaaaaarin.github.io/gift-library/aa/ep/113/" target="_blank" rel="noopener">🎁 プレゼントを受け取る</a>
+    </div>
+    <p class="src">
+      出典（公式のみ）：
+      Anthropic「Claude Fable 5.1 and Mythos 5.1」 <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">anthropic.com</a> ／
+      OpenAI「GPT-6 Astra」 <a href="https://openai.com/index/gpt-6-astra/" target="_blank" rel="noopener">openai.com</a> ／
+      Anthropic「Improving our alignment and security efforts」 <a href="https://www.anthropic.com/news/improving-alignment-security-efforts" target="_blank" rel="noopener">anthropic.com</a> ／
+      Anthropic「Enterprise Frontier Safeguards」 <a href="https://www.anthropic.com/news/enterprise-frontier-safeguards" target="_blank" rel="noopener">anthropic.com</a> ／
+      「Building commerce agents with Claude」 <a href="https://claude.com/blog/claude-for-commerce-agents" target="_blank" rel="noopener">claude.com</a> ／
+      Claude Code CHANGELOG <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">github.com</a> ／
+      ChatGPT &amp; Codex changelog <a href="https://learn.chatgpt.com/docs/changelog" target="_blank" rel="noopener">learn.chatgpt.com</a> ／
+      Claude Developers（@ClaudeDevs）2026年8月30日の投稿（週制限）<br>
+      ※ 本資料は公式発表をもとにした非公式のまとめです。全文（GitHub公開）・スライドは概要欄から。
+    </p>
+  </footer>
+</div>
+</body>
+</html>
